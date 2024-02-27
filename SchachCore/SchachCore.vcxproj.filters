@@ -24,12 +24,18 @@
     <ClInclude Include="include\pieces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\board.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

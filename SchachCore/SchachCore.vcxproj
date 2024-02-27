@@ -72,19 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj</IntDir>
+    <IntDir>$(SolutionDir)obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj</IntDir>
+    <IntDir>$(SolutionDir)obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj</IntDir>
+    <IntDir>$(SolutionDir)obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj</IntDir>
+    <IntDir>$(SolutionDir)obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -159,11 +159,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\board.h" />
     <ClInclude Include="include\pieces.h" />
     <ClInclude Include="include\framework.h" />
     <ClInclude Include="include\pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\board.c" />
     <ClCompile Include="src\dllmain.c" />
     <ClCompile Include="src\pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
