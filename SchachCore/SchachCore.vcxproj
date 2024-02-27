@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\pieces.h" />
     <ClInclude Include="include\framework.h" />
     <ClInclude Include="include\pch.h" />
   </ItemGroup>
