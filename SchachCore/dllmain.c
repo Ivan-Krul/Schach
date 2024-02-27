@@ -3,5 +3,5 @@
 #include <stdio.h>
 
 __declspec(dllexport) void Print(const char* str) {
-	printf("%s\n", str);
+    printf("%s\n", str);
 }

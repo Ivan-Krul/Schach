@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Schach
 {
-	internal class Import
-	{
-		[DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern void Print([MarshalAs(UnmanagedType.LPStr)] string message);
+    internal class Import
+    {
+        [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Print([MarshalAs(UnmanagedType.LPStr)] string message);
 
-	}
+    }
 }
