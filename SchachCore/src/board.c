@@ -3,20 +3,18 @@
 Board set_board(char count_players) {
     Board b;
     b.move = 0;
+    b.count_players = count_players;
     return b;
 }
 
 Board set_default_board(char count_players) {
+    Board b = set_board(count_players);
+
     if (count_players < 2)
-        return set_board(count_players);
+        return b;
 
-    Board b;
+    get_board_default_state(b.state);
 
-    Piece* state = get_board_default_state();
-
-    set_board_state(&b, state);
-
-    free(state);
     return b;
 }
 
@@ -38,9 +36,7 @@ PieceType set_default_piece_type(char i) {
     }
 }
 
-Piece* get_board_default_state() {
-    Piece* pieces = malloc(BOARD_AREA * sizeof(Piece));
-
+void get_board_default_state(Piece* pieces) {
     bool precalc_y0;
     bool precalc_y1;
     bool precalc_yn_1;
@@ -62,7 +58,6 @@ Piece* get_board_default_state() {
         else if (precalc_yn_1 || precalc_yn_2)
             set_piece_color(&pieces[i], 1);
     }
-    return pieces;
 }
 
 void set_board_state(Board* inst, const Piece* state) {

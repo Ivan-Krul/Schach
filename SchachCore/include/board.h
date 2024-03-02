@@ -19,7 +19,7 @@ typedef struct Board Board;
 
 Board set_board(char count_players);
 Board set_default_board(char count_players);
-Piece* get_board_default_state();
+void get_board_default_state(Piece* pieces);
 void set_board_state(Board* inst, const Piece* state);
 PieceType set_default_piece_type(char i);
 

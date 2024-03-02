@@ -104,6 +104,8 @@
       <NoEntryPoint>false</NoEntryPoint>
       <MapExports>false</MapExports>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,6 +129,8 @@
       <EnableUAC>false</EnableUAC>
       <NoEntryPoint>false</NoEntryPoint>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,6 +151,8 @@
       <NoEntryPoint>false</NoEntryPoint>
       <MapExports>false</MapExports>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -170,6 +176,8 @@
       <EnableUAC>false</EnableUAC>
       <NoEntryPoint>false</NoEntryPoint>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
