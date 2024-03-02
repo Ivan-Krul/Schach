@@ -9,6 +9,13 @@ namespace Schach
         {
             Import.Print("Hi!");
 
+            var board = Import.CreateBoard();
+
+            for (int i = 0; i < board.state.Length; i++)
+            {
+                Import.Print(board.state[i].ToString());
+            }
+
             Raylib.InitWindow(640, 360, "Schach");
             Raylib.SetTargetFPS(60);
 
