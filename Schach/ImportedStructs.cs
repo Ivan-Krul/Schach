@@ -21,38 +21,38 @@ namespace Schach
             _count
         }
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct Piece
         {
-            [FieldOffset(0)]
-            public byte data;
+            public byte value;
 
-            [FieldOffset(0)]
-            public PieceType type;
-
-            [FieldOffset(0)]
-            public byte color;
-
-            public Piece(byte color, PieceType type)
+            public Piece(byte value)
             {
-                this.data = 0;
-                this.color = (byte)(color & 7);
-                this.type = type;
+                this.value = value;
+            }
+
+            public byte GetColor()
+            {
+                return (byte)(value & 0x1f);
+            }
+            public PieceType GetPieceType()
+            {
+                return (PieceType)(value >> 5);
             }
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public class Board
         {
-            public const int BOARD_SIDE = 8;
-            public const int BOARD_AREA = BOARD_SIDE * BOARD_SIDE;
-
-            public Piece[] state = new Piece[BOARD_AREA];
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
+            public Piece[] state;
             public byte count_players;
             public byte move;
 
             public Board(byte count_players, byte move)
             {
                 this.count_players = count_players;
+                this.state = new Piece[64];
                 this.move = move;
             }
         }

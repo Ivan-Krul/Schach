@@ -9,11 +9,18 @@ namespace Schach
         {
             Import.Print("Hi!");
 
-            var board = Import.CreateBoard();
-
-            for (int i = 0; i < board.state.Length; i++)
+            // System.TypeLoadException: 'Cannot marshal field 'state' of type 'Board': This type can only be marshaled in restricted ways.'
+            unsafe
             {
-                Import.Print(board.state[i].ToString());
+                var board = Import.CreateBoard();
+
+                for (int i = 0; i < 64; i++)
+                {
+                    
+                    Import.Print(((ImportedStructs.Board*)(board))->state[i].ToString());
+                }
+
+                Import.DeleteBoard(board);
             }
 
             Raylib.InitWindow(640, 360, "Schach");
