@@ -32,7 +32,7 @@ typedef struct Piece Piece;
 inline void set_piece_color(Piece* inst, const char color);
 inline void set_piece_type(Piece* inst, PieceType type);
 
-Piece set_piece(PieceType type, const char color) {
+inline Piece set_piece(PieceType type, const char color) {
     Piece p;
     set_piece_color(&p, color);
     set_piece_type(&p, type);

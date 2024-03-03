@@ -26,11 +26,6 @@ namespace Schach
         {
             public byte value;
 
-            public Piece(byte value)
-            {
-                this.value = value;
-            }
-
             public byte GetColor()
             {
                 return (byte)(value & 0x1f);
@@ -41,20 +36,20 @@ namespace Schach
             }
         }
 
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public class Board
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        public struct Board
         {
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
             public Piece[] state;
             public byte count_players;
             public byte move;
-
-            public Board(byte count_players, byte move)
-            {
-                this.count_players = count_players;
-                this.state = new Piece[64];
-                this.move = move;
-            }
         }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 4)]
+        public struct Arr {
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
+            public int[] a;
+        }
+
     }
 }
