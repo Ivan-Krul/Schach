@@ -15,12 +15,6 @@ namespace Schach
         public static extern void Print([MarshalAs(UnmanagedType.LPStr)] string message);
 
         [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern ImportedStructs.Piece GetPiece();
-
-        //public static extern nint CreateBoard();
-
-        [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern ImportedStructs.Arr GetArray5();
-
+        public static extern ImportedStructs.Board CreateBoard();
     }
 }

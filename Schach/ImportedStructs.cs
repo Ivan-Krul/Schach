@@ -36,7 +36,7 @@ namespace Schach
             }
         }
 
-        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct Board
         {
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
@@ -44,12 +44,5 @@ namespace Schach
             public byte count_players;
             public byte move;
         }
-
-        [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        public struct Arr {
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
-            public int[] a;
-        }
-
     }
 }

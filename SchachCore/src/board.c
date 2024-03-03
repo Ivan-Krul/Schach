@@ -52,11 +52,15 @@ void get_board_default_state(Piece* pieces) {
             set_piece_type(&pieces[i], set_default_piece_type(i));
         else if (precalc_y1 || precalc_yn_2)
             set_piece_type(&pieces[i], pawn);
+        else
+            set_piece_type(&pieces[i], none);
 
         if (precalc_y1 || precalc_y0)
-            set_piece_color(&pieces[i], 0);
-        else if (precalc_yn_1 || precalc_yn_2)
             set_piece_color(&pieces[i], 1);
+        else if (precalc_yn_1 || precalc_yn_2)
+            set_piece_color(&pieces[i], 2);
+        else
+            set_piece_color(&pieces[i], 0);
     }
 }
 
