@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Schach
 {
-    internal class ImportedStructs
+    internal class SchachCore
     {
+        // Imported structs
         public enum PieceType
         {
             none,
@@ -44,5 +46,13 @@ namespace Schach
             public byte count_players;
             public byte move;
         }
+
+
+        // Imported functions
+        [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Print([MarshalAs(UnmanagedType.LPStr)] string message);
+
+        [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern Board CreateBoard();
     }
 }

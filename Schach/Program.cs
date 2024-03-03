@@ -7,15 +7,19 @@ namespace Schach
     {
         public static void Main()
         {
-            Import.Print("Hi!");
+            SchachCore.Print("Hi!");
 
-            var board = Import.CreateBoard();
+            var board = SchachCore.CreateBoard();
 
             for (int i = 0; i < board.state.Length; i++)
             {
-                Import.Print(board.state[i].GetPieceType().ToString() + " " + board.state[i].GetColor().ToString());
+                SchachCore.Print(board.state[i].GetPieceType().ToString() + " " + board.state[i].GetColor().ToString());
             }
 
+            string[] texPaths = { "./assets/board.png" };
+            var renderer = new Renderer(texturePath: texPaths);
+
+            Raylib.SetConfigFlags(ConfigFlags.ResizableWindow);
             Raylib.InitWindow(640, 360, "Schach");
             Raylib.SetTargetFPS(60);
 
@@ -24,7 +28,7 @@ namespace Schach
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.White);
 
-                Raylib.DrawText("Hello, world!", 12, 12, 20, Color.Black);
+                renderer.Render();
 
                 Raylib.EndDrawing();
             }
