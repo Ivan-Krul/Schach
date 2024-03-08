@@ -23,7 +23,7 @@ namespace Schach
 
         public Renderer(Texture2D[] textures)
         {
-            this.textures = [.. textures];
+            this.textures = [.. textures]; 
         }
 
         public Renderer(List<Texture2D> textures)
@@ -49,9 +49,7 @@ namespace Schach
         {
             for (int i = 0; i < texturePath.Length; i++)
             {
-                var path = texturePath[i];
-                var tex = Raylib.LoadTexture(path);
-                textures.Add(tex);
+                textures.Add(Raylib.LoadTexture(texturePath[i]));
             }
         }
 
