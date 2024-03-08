@@ -16,12 +16,11 @@ namespace Schach
                 SchachCore.Print(board.state[i].GetPieceType().ToString() + " " + board.state[i].GetColor().ToString());
             }
 
-            string[] texPaths = { "./assets/board.png" };
-            var renderer = new Renderer(texturePath: texPaths);
+            Raylib.InitWindow(500, 500, "Schach");
+            Raylib.SetTargetFPS(30);
 
-            Raylib.SetConfigFlags(ConfigFlags.ResizableWindow);
-            Raylib.InitWindow(640, 360, "Schach");
-            Raylib.SetTargetFPS(60);
+            List<string> texPaths = new List<string> { "./assets/board.png" };
+            var renderer = new Renderer(texturePath: texPaths);
 
             while (!Raylib.WindowShouldClose())
             {

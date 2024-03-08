@@ -49,7 +49,9 @@ namespace Schach
         {
             for (int i = 0; i < texturePath.Length; i++)
             {
-                textures.Add(Raylib.LoadTexture(texturePath[i]));
+                var path = texturePath[i];
+                var tex = Raylib.LoadTexture(path);
+                textures.Add(tex);
             }
         }
 
