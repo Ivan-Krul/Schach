@@ -15,8 +15,15 @@ namespace Schach
         int offset = 50;
 
         public RendererBoard() : base(13) => SetDefaultTexture();
+        public RendererBoard(int windowX, int windowY) : base(13, windowX, windowY) => SetDefaultTexture();
 
         public RendererBoard(int offset) : base(13)
+        {
+            this.offset = offset;
+            SetDefaultTexture();
+        }
+
+        public RendererBoard(int offset, int windowX, int windowY) : base(13, windowX, windowY)
         {
             this.offset = offset;
             SetDefaultTexture();
