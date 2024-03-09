@@ -23,11 +23,11 @@ namespace Schach
 
             var renderer = new RendererBoard();
             var mouse = new MouseInput();
-            var mouseCoord = new Vector2();
+            var mouseCoord = new Vector2i();
 
             while (!Raylib.WindowShouldClose())
             {
-                mouseCoord = mouse.GetVirtualMouse(renderer);
+                mouseCoord = mouse.GetBoardCoords(renderer);
 
                 Raylib.BeginTextureMode(renderer.WindowCanvas);
 

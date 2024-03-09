@@ -36,8 +36,11 @@ namespace Schach
         {
             var mouse = GetVirtualMouse(renderer);
 
-            int mouseX = (int)mouse.X / renderer.Offset;
-            int mouseY = (int)mouse.Y / renderer.Offset;
+            int mouseY = (int)mouse.Y / (renderer.Offset) - 1;
+            int mouseX = (int)mouse.X / (renderer.Offset) - 1;
+
+            mouseX = Math.Min(Math.Max(mouseX, 0), 7);
+            mouseY = Math.Min(Math.Max(mouseY, 0), 7);
 
             return new Vector2i(mouseX, mouseY);
         }
