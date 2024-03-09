@@ -21,4 +21,3 @@ short ConvertToRawStringChessPos(int x, int y) {
 
     return (chrX << 8) | chrY;
 }
-

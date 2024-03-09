@@ -2,11 +2,13 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <math.h>
 #include "Pieces.h"
 
 #pragma pack(push)
 #pragma pack(2)
 
+#define BOARD_SIDE_CAPACITY 3
 #define BOARD_SIDE 8
 #define BOARD_AREA (BOARD_SIDE * BOARD_SIDE)
 
