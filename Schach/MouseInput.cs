@@ -45,5 +45,9 @@ namespace Schach
             return new Vector2i(mouseX, mouseY);
         }
 
+        public bool IsMouseClicked()
+        {
+            return Raylib.IsMouseButtonPressed(MouseButton.Left);
+        }
     }
 }

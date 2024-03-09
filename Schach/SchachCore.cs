@@ -54,5 +54,8 @@ namespace Schach
 
         [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern Board CreateBoard();
+
+        [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern short ConvertToStringChessPos(int x, int y);
     }
 }

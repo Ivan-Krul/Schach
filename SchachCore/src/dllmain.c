@@ -4,7 +4,7 @@
 
 __declspec(dllexport) void Print(const char* str);
 __declspec(dllexport) Board CreateBoard();
-__declspec(dllexport) bool IsInBoard(const int targetX, const int targetY);
+__declspec(dllexport) short ConvertToStringChessPos(int x, int y);
 
 void Print(const char* str) {
     printf("%s\n", str);
@@ -15,7 +15,10 @@ Board CreateBoard() {
     return b;
 }
 
-bool IsInBoard(const int targetX, const int targetY) {
-    return (targetX >= 0) && (targetX < BOARD_SIDE) && (targetY >= 0) && (targetY < BOARD_SIDE);
+short ConvertToStringChessPos(int x, int y) {
+    short chrX = 'A' + x;
+    short chrY = '8' - y;
+
+    return (chrX << 8) | chrY;
 }
 

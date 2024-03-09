@@ -23,11 +23,10 @@ namespace Schach
 
             var renderer = new RendererBoard();
             var mouse = new MouseInput();
-            var mouseCoord = new Vector2i();
 
             while (!Raylib.WindowShouldClose())
             {
-                mouseCoord = mouse.GetBoardCoords(renderer);
+                Vector2i mouseCoord = mouse.GetBoardCoords(renderer);
 
                 Raylib.BeginTextureMode(renderer.WindowCanvas);
 
@@ -44,7 +43,13 @@ namespace Schach
 
                 Raylib.EndDrawing();
 
-                SchachCore.Print($"{(int)mouseCoord.X} {(int)mouseCoord.Y}");
+                if(mouse.IsMouseClicked())
+                {
+                    var not = SchachCore.ConvertToStringChessPos(mouseCoord.X, mouseCoord.Y);
+                    
+
+                    SchachCore.Print($"{(char)(not >> 8)}{(char)(not & 255)}");
+                }
             }
 
             Raylib.CloseWindow();
