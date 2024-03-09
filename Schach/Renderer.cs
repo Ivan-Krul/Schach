@@ -30,24 +30,28 @@ namespace Schach
         {
             textures = new List<Texture2D>(count);
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(Texture2D[] textures)
         {
             this.textures = [.. textures];
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(List<Texture2D> textures)
         {
             this.textures = textures;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(string[] texturePath)
         {
             textures = [];
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
 
             LoadTextures(texturePath);
         }
@@ -56,6 +60,7 @@ namespace Schach
         {
             textures = [];
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
 
             LoadTextures([.. texturePath]);
         }
@@ -66,6 +71,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(int count, int windowX, int windowY)
@@ -74,6 +80,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(Texture2D[] textures, int windowX, int windowY)
@@ -82,6 +89,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(List<Texture2D> textures, int windowX, int windowY)
@@ -90,6 +98,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
         }
 
         public Renderer(string[] texturePath, int windowX, int windowY)
@@ -98,6 +107,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
 
             LoadTextures(texturePath);
         }
@@ -108,6 +118,7 @@ namespace Schach
             windowSizeX = windowX;
             windowSizeY = windowY;
             WindowCanvas = Raylib.LoadRenderTexture(windowSizeX, windowSizeY);
+            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
 
             LoadTextures(texturePath.ToArray());
         }
@@ -135,7 +146,6 @@ namespace Schach
 
         public void RenderScalable()
         {
-            RectSRC = new Rectangle(0.0f, 0.0f, WindowCanvas.Texture.Width, -WindowCanvas.Texture.Height);
             RectDST = new Rectangle((Raylib.GetScreenWidth() - (windowSizeX * scale)) * 0.5f, (Raylib.GetScreenHeight() - (windowSizeY * scale)) * 0.5f, windowSizeX * scale, windowSizeY * scale);
 
             Raylib.DrawTexturePro(

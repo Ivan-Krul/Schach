@@ -12,20 +12,20 @@ namespace Schach
 {
     internal class RendererBoard : Renderer
     {
-        int offset = 50;
+        public int Offset { get; protected set; } = 50;
 
         public RendererBoard() : base(13) => SetDefaultTexture();
         public RendererBoard(int windowX, int windowY) : base(13, windowX, windowY) => SetDefaultTexture();
 
         public RendererBoard(int offset) : base(13)
         {
-            this.offset = offset;
+            this.Offset = offset;
             SetDefaultTexture();
         }
 
         public RendererBoard(int offset, int windowX, int windowY) : base(13, windowX, windowY)
         {
-            this.offset = offset;
+            this.Offset = offset;
             SetDefaultTexture();
         }
 
@@ -75,7 +75,7 @@ namespace Schach
 
                 if(texture.HasValue)
                 {
-                    Raylib.DrawTexture(texture.Value, coordX * offset + offset, coordY * offset + offset, Raylib_cs.Color.White);
+                    Raylib.DrawTexture(texture.Value, coordX * Offset + Offset, coordY * Offset + Offset, Raylib_cs.Color.White);
                 }
             }
         }

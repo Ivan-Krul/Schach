@@ -22,12 +22,12 @@ namespace Schach
             Raylib.InitWindow(500, 500, "Schach");
 
             var renderer = new RendererBoard();
-            float scale = 0;
-
+            var mouse = new MouseInput();
+            var mouseCoord = new Vector2();
 
             while (!Raylib.WindowShouldClose())
             {
-                scale = renderer.GetScale();
+                mouseCoord = mouse.GetVirtualMouse(renderer);
 
                 Raylib.BeginTextureMode(renderer.WindowCanvas);
 
@@ -35,7 +35,7 @@ namespace Schach
                 renderer.Render(board);
 
                 Raylib.EndTextureMode();
-
+                
 
                 Raylib.BeginDrawing();
 
@@ -43,6 +43,8 @@ namespace Schach
                 renderer.RenderScalable();
 
                 Raylib.EndDrawing();
+
+                SchachCore.Print($"{(int)mouseCoord.X} {(int)mouseCoord.Y}");
             }
 
             Raylib.CloseWindow();
