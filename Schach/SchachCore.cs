@@ -56,6 +56,12 @@ namespace Schach
         public static extern Board CreateBoard();
 
         [DllImport("SchachCore.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern short ConvertToStringChessPos(int x, int y);
+        public static extern short ConvertToRawStringChessPos(int x, int y);
+
+        public static string ConvertToStringChessPos(int x, int y)
+        {
+            short knot = ConvertToRawStringChessPos(x, y);
+            return $"{(char)(knot >> 8)}{(char)(knot & 255)}";
+        }
     }
 }

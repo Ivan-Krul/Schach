@@ -45,10 +45,7 @@ namespace Schach
 
                 if(mouse.IsMouseClicked())
                 {
-                    var not = SchachCore.ConvertToStringChessPos(mouseCoord.X, mouseCoord.Y);
-                    
-
-                    SchachCore.Print($"{(char)(not >> 8)}{(char)(not & 255)}");
+                    SchachCore.Print($"{SchachCore.ConvertToStringChessPos(mouseCoord.X, mouseCoord.Y)}");
                 }
             }
 
