@@ -27,4 +27,3 @@ Coord set_coord(char x, char y) {
 }
 
 
-

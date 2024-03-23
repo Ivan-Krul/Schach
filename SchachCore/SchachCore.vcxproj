@@ -183,9 +183,11 @@
   <ItemGroup>
     <ClInclude Include="include\board.h" />
     <ClInclude Include="include\move.h" />
+    <ClInclude Include="include\move_generator.h" />
     <ClInclude Include="include\pieces.h" />
     <ClInclude Include="include\framework.h" />
     <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\board.c" />
