@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "board.h"
+#include "pieces.h"
 
 Board set_board(char count_players) {
     Board b;

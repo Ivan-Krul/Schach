@@ -43,7 +43,7 @@ void set_piece_color(Piece* inst, const char color) {
     inst->color = color & PIECE_COLOR_MASK;
 }
 
-char get_piece_color(const Piece inst) {
+inline char get_piece_color(const Piece inst) {
     return inst.color << 6;
 }
 
@@ -51,7 +51,7 @@ void set_piece_type(Piece* inst, PieceType type) {
     inst->type = type & PIECE_TYPE_MASK;
 }
 
-PieceType get_piece_type(Piece inst) {
+inline PieceType get_piece_type(Piece inst) {
     return (PieceType)inst.type;
 }
 

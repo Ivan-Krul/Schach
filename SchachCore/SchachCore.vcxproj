@@ -72,19 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj\</IntDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj\</IntDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj\</IntDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\net8.0\</OutDir>
-    <IntDir>$(SolutionDir)obj\</IntDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
